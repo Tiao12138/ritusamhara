@@ -1,0 +1,193 @@
+html {
+  font-size: 12px;
+}
+
+p{
+  color: #444444;
+}
+
+a {
+  font-style: italic; 
+  color: #888888;
+}
+
+a:hover{
+  font-style: italic; 
+  color: #444444;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.container {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+}
+
+.column {
+  display: block;
+  flex-grow: 1;
+  padding: 20px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  overflow: hidden;
+  position: relative;
+  z-index: 5;
+}
+
+#col1 {
+  flex-basis: 28%;
+  background-color: rgba(63, 81, 181, 0.1);
+  overflow-y: auto;
+  max-height: 100%;
+}
+
+#col2 {
+  flex-basis: 40%;
+  background-color: rgba(63, 81, 181, 0.2);
+  overflow-y: auto;
+  max-height: 100%;
+}
+
+#col3 {
+  flex-basis: 32%;
+  background-color: rgba(63, 81, 181, 0.3);
+  overflow-y: auto;
+  max-height: 100%;
+}
+
+.title {
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 1.5rem;
+  padding: 10px;
+  text-align: center;
+  position: fixed;
+}
+
+.title:hover {
+  background-color: rgba(255, 215, 0, 0.6); 
+  backdrop-filter: blur(25px);
+  -webkit-backdrop-filter: blur(25px);
+  border-radius: 5px;
+}
+
+.checkbox {
+  margin-right: 10px;
+}
+
+.content.hidden {
+  display: none;
+}
+
+.custom-checkbox {
+  display: inline-block;
+  padding-left: 25px; 
+  position: relative;
+  cursor: pointer;
+  font-size: 1.25rem;
+}
+
+.custom-checkbox::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 12px;
+  height: 12px;
+  border: 1px solid #666;
+  background-color: rgba(63, 81, 181, 0.1);
+  border-radius: 2px; 
+}
+
+#toggle-checkbox:checked + .custom-checkbox::before {
+  background-color: #FFD700;
+  content: "✓";
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.content .hidden {
+  display: none;
+}
+
+.content{
+  margin-top: 4rem;
+  padding-left: 1rem;
+}
+
+.hidden .content {
+  display: none;
+}
+
+.hidden {
+  padding: 0;
+  border: none;
+  background-color: transparent;
+}
+
+.column.hidden {
+  flex-basis: 2% !important;  
+  padding: 0; 
+  overflow: hidden; 
+}
+
+.hidden .title {
+  writing-mode: vertical-rl; 
+  transform: rotate(180deg); 
+  position: absolute;
+  top: 10px;
+  right: 0;
+  padding: 5px;
+  border: none;
+}
+
+.expanded {
+  flex-basis: 100% !important;
+}
+
+.hover-word {
+  position: relative;
+  cursor: pointer;
+  margin-right: 0.5rem;
+}
+
+.explanation {
+  display: none;
+  position: absolute;
+  top: 100%; 
+  left: 0;
+  width: 200px;
+  padding: 8px;
+  background-color: #f8f9fa;
+  color: #333;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 1.25rem;
+  z-index: 10;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  font-family: 'Noto Serif', serif;
+}
+
+.hover-word:hover .explanation {
+  display: block;
+}
+
+.hover-word:hover {
+  color: #E06B17;
+}
+
+.explanation strong {
+  font-weight: bold;
+}
+
+.explanation em {
+  font-style: italic;
+  color: #666;
+}
+
